@@ -1,0 +1,771 @@
+/* =========================================
+   Wassim Jmili Cybersecurity Portfolio
+   Main CSS
+========================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Courier New", monospace;
+
+    background: #0d1117;
+
+    color: white;
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* =========================
+   Background Effect
+========================= */
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+    radial-gradient(#379226 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    opacity: .08;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+
+/* =========================
+        Boot Screen
+========================= */
+
+
+.boot-screen {
+
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+
+}
+
+
+
+.boot-content {
+
+
+    width: 90%;
+
+    max-width: 800px;
+
+}
+
+
+
+.ascii-art {
+
+
+    color:#379226;
+
+    text-align:center;
+
+    font-size:14px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.boot-terminal p {
+
+
+    margin:15px 0;
+
+    color:#aaa;
+
+}
+
+
+
+.boot-green {
+
+    color:#379226;
+
+}
+
+
+.boot-blue {
+
+    color:#58a6ff;
+
+}
+
+
+
+.boot-progress {
+
+
+    height:5px;
+
+    background:#222;
+
+    margin-top:30px;
+
+    overflow:hidden;
+
+}
+
+
+
+.boot-progress-bar {
+
+
+    height:100%;
+
+    width:0;
+
+    background:#379226;
+
+    animation:loading 3s forwards;
+
+
+}
+
+
+
+.boot-footer {
+
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#379226;
+
+}
+
+
+
+
+/* =========================
+        Navigation
+========================= */
+
+
+nav {
+
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    background:rgba(13,17,23,.9);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid #30363d;
+
+    z-index:1000;
+
+
+}
+
+
+
+.nav-container {
+
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+
+}
+
+
+
+.logo {
+
+
+    color:#379226;
+
+    font-weight:bold;
+
+}
+
+
+
+.nav-links a {
+
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    transition:.3s;
+
+
+}
+
+
+
+.nav-links a:hover {
+
+
+    color:#379226;
+
+
+}
+
+
+
+
+
+
+/* =========================
+        Hero
+========================= */
+
+
+.hero {
+
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:100px 20px;
+
+
+}
+
+
+
+.hero-content {
+
+
+    text-align:center;
+
+    max-width:900px;
+
+
+}
+
+
+
+.tag {
+
+
+    display:inline-block;
+
+    border:1px solid #379226;
+
+    padding:10px 20px;
+
+    color:#379226;
+
+    border-radius:8px;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+h1 {
+
+
+    font-size:70px;
+
+    background:linear-gradient(
+    45deg,
+    #379226,
+    #58a6ff
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.hero h2 {
+
+
+    margin-top:20px;
+
+    color:#58a6ff;
+
+}
+
+
+
+.subtitle {
+
+
+    color:#aaa;
+
+    font-size:20px;
+
+    margin:25px 0 40px;
+
+
+}
+
+
+
+
+/* =========================
+        Terminal
+========================= */
+
+
+.terminal-window {
+
+
+    background:#161b22;
+
+    border:1px solid #30363d;
+
+    border-radius:15px;
+
+    text-align:left;
+
+    padding:25px;
+
+    box-shadow:
+    0 0 30px rgba(55,146,38,.2);
+
+
+}
+
+
+
+.terminal-header {
+
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.terminal-header span {
+
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#379226;
+
+
+}
+
+
+.terminal-body p {
+
+
+    margin:12px 0;
+
+}
+
+
+.output {
+
+
+    color:#58a6ff;
+
+}
+
+
+
+/* =========================
+        Buttons
+========================= */
+
+
+.buttons {
+
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+
+}
+
+
+
+.btn {
+
+
+    padding:14px 30px;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+
+
+.primary {
+
+
+    border:1px solid #379226;
+
+    color:#379226;
+
+
+}
+
+
+.primary:hover {
+
+
+    background:#379226;
+
+    color:black;
+
+
+}
+
+
+
+.secondary {
+
+
+    border:1px solid #58a6ff;
+
+    color:#58a6ff;
+
+
+}
+
+
+
+.secondary:hover {
+
+
+    background:#58a6ff;
+
+    color:black;
+
+
+}
+
+
+
+
+
+/* =========================
+        Sections
+========================= */
+
+
+section {
+
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:80px 20px;
+
+
+}
+
+
+
+section h2 {
+
+
+    font-size:40px;
+
+    color:#379226;
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+.card {
+
+
+    background:#161b22;
+
+    border:1px solid #30363d;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover {
+
+
+    transform:translateY(-5px);
+
+    border-color:#379226;
+
+    box-shadow:
+    0 0 25px rgba(55,146,38,.2);
+
+
+}
+
+
+
+
+.card h3 {
+
+
+    color:#58a6ff;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+.card p,
+.card li {
+
+
+    color:#ccc;
+
+    line-height:1.8;
+
+
+}
+
+
+
+.card ul {
+
+
+    padding-left:25px;
+
+
+}
+
+
+
+
+/* =========================
+        Grid
+========================= */
+
+
+.grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+
+}
+
+
+
+
+/* =========================
+        Links
+========================= */
+
+
+a {
+
+
+    color:#58a6ff;
+
+}
+
+
+
+a:hover {
+
+
+    color:#379226;
+
+
+}
+
+
+
+
+/* =========================
+        Footer
+========================= */
+
+
+footer {
+
+
+    text-align:center;
+
+    padding:30px;
+
+    background:#161b22;
+
+    border-top:1px solid #30363d;
+
+    color:#aaa;
+
+
+}
+
+
+
+
+
+
+/* =========================
+        Responsive
+========================= */
+
+
+@media(max-width:768px){
+
+
+
+h1 {
+
+
+    font-size:45px;
+
+
+}
+
+
+
+.nav-container {
+
+
+    flex-direction:column;
+
+    gap:15px;
+
+
+}
+
+
+
+.nav-links {
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+
+}
+
+
+
+.nav-links a {
+
+
+    margin:10px;
+
+
+}
+
+
+
+.buttons {
+
+
+    flex-direction:column;
+
+
+}
+
+
+}
