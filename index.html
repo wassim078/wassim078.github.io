@@ -1,73 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Wassim Jmili | Cybersecurity Portfolio</title>
 
-<style>
+<meta name="description" content="Wassim Jmili - Cybersecurity Engineering Student | SOC Analyst Portfolio">
 
-body {
-    font-family: Arial, sans-serif;
-    background:#0d1117;
-    color:white;
-    margin:40px;
-}
+<meta name="author" content="Wassim Jmili">
 
 
-h1 {
-    color:#379226;
-}
+<!-- CSS -->
+
+<link rel="stylesheet" href="src/css/main.css">
+
+<link rel="stylesheet" href="src/css/animations.css">
 
 
-h2 {
-    color:#58a6ff;
-}
 
+<!-- LinkedIn Public Profile Badge Script -->
 
-.card {
-
-    background:#161b22;
-    padding:20px;
-    border-radius:10px;
-    margin:20px 0;
-
-}
-
-
-a {
-
-    color:#58a6ff;
-
-}
-
-
-</style>
-
-
-<!-- LinkedIn Badge Script -->
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<script 
+src="https://platform.linkedin.com/badges/js/profile.js"
+async defer 
+type="text/javascript">
+</script>
 
 
 </head>
 
 
-
 <body>
 
 
+
+<!-- =========================
+     TERMINAL BOOT SCREEN
+========================= -->
+
+
+<div id="bootScreen" class="boot-screen">
+
+<div class="boot-content">
+
+
+<pre class="ascii-art">
+
+   ____       __        ____       _ 
+  / __ \___  / /_____ _/ / /____ _(_)
+ / / / / _ \/ __/ __ `/ / __/ _ `/ /
+/ /_/ /  __/ /_/ /_/ / / /_/  __/ /
+\____/\___/\__/\__,_/_/\__/\__,_/
+
+</pre>
+
+
+
+<div class="boot-terminal">
+
+
+<p>
+<span class="boot-green">[BOOT]</span>
+Initializing SOC environment...
+</p>
+
+
+<p>
+<span class="boot-blue">[LOAD]</span>
+Loading security modules...
+</p>
+
+
+<p>
+<span class="boot-green">[OK]</span>
+Splunk Enterprise
+</p>
+
+
+<p>
+<span class="boot-green">[OK]</span>
+Microsoft Sentinel
+</p>
+
+
+<p>
+<span class="boot-green">[OK]</span>
+Wazuh SIEM
+</p>
+
+
+<p>
+<span class="boot-blue">[INFO]</span>
+Starting portfolio.sh
+</p>
+
+
+</div>
+
+
+
+<div class="boot-progress">
+
+<div class="boot-progress-bar"></div>
+
+</div>
+
+
+
+<p class="boot-footer">
+
+Access Granted ✓
+
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- =========================
+        NAVIGATION
+========================= -->
+
+
+<nav>
+
+
+<div class="nav-container">
+
+
+<div class="logo">
+
+root@wassim:~$
+
+</div>
+
+
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#experience">Experience</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#certifications">Certifications</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<!-- =========================
+        HERO
+========================= -->
+
+
+<section class="hero">
+
+
+<div class="hero-content fade-in">
+
+
+<div class="tag">
+
+// cybersecurity analyst portfolio
+
+</div>
+
+
+
 <h1>
-Wassim Jmili
+
+WASSIM JMILI
+
 </h1>
 
 
+
 <h2>
-Cybersecurity Engineering Student | SOC Analyst Path
+
+Cybersecurity Engineering Student
+
 </h2>
 
 
 
-<div class="card">
+<p class="subtitle">
+
+SOC Analyst Path | SIEM | Cloud Security | Detection Engineering
+
+</p>
+
+
+
+
+
+<div class="terminal-window">
+
+
+<div class="terminal-header">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+
+<div class="terminal-body">
+
+
+<p>
+
+$ whoami
+
+</p>
+
+
+<p class="output">
+
+Wassim Jmili
+
+</p>
+
+
+
+<p>
+
+$ cat role.txt
+
+</p>
+
+
+<p class="output">
+
+Cybersecurity Engineer Student
+
+</p>
+
+
+
+<p>
+
+$ cat focus.txt
+
+</p>
+
+
+<p class="output">
+
+SOC Operations<br>
+SIEM Monitoring<br>
+Security Detection<br>
+Cloud Security
+
+</p>
+
+
+
+<p>
+
+$ ./tools.sh
+
+</p>
+
+
+<p class="output">
+
+Splunk | Sentinel | Wazuh | TheHive | MISP
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="buttons">
+
+
+<a class="btn primary" href="#projects">
+
+View Projects
+
+</a>
+
+
+<a class="btn secondary" href="https://github.com/wassim078" target="_blank">
+
+GitHub
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+        ABOUT
+========================= -->
+
+
+<section id="about">
 
 
 <h2>
@@ -75,13 +349,85 @@ About Me
 </h2>
 
 
+
+<div class="card">
+
+
 <p>
 
-Cybersecurity engineering student interested in SOC operations,
-SIEM technologies, security monitoring, detection engineering,
-and cloud security.
+I am a Cybersecurity Engineering student at ESPRIT,
+interested in Security Operations Center (SOC),
+SIEM technologies, detection engineering and cloud security.
 
 </p>
+
+
+<p>
+
+I build practical cybersecurity labs using
+Microsoft Sentinel, Splunk Enterprise, Sysmon,
+Wazuh and MITRE ATT&CK techniques.
+
+</p>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        SKILLS
+========================= -->
+
+
+<section id="skills">
+
+
+<h2>
+
+Technical Skills
+
+</h2>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+SOC & SIEM
+</h3>
+
+<ul>
+
+<li>Microsoft Sentinel</li>
+
+<li>Splunk Enterprise</li>
+
+<li>Wazuh</li>
+
+<li>Elastic SIEM</li>
+
+<li>TheHive</li>
+
+<li>MISP</li>
+
+<li>Cortex</li>
+
+</ul>
 
 
 </div>
@@ -93,26 +439,159 @@ and cloud security.
 <div class="card">
 
 
-<h2>
-Cybersecurity Projects
-</h2>
+<h3>
+
+Cloud Security
+
+</h3>
 
 
 <ul>
 
-<li>
-Azure Sentinel SIEM Lab
-</li>
+<li>Azure Monitor</li>
+
+<li>Azure Sentinel</li>
+
+<li>Microsoft Entra ID</li>
+
+<li>KQL</li>
+
+<li>Logic Apps</li>
+
+</ul>
 
 
-<li>
-Splunk Enterprise + Sysmon Detection Lab
-</li>
+</div>
 
 
-<li>
-Wazuh SOC Home Lab
-</li>
+
+
+
+<div class="card">
+
+
+<h3>
+
+Networking
+
+</h3>
+
+
+<ul>
+
+<li>CCNA</li>
+
+<li>TCP/IP</li>
+
+<li>Firewalls</li>
+
+<li>VPN</li>
+
+<li>DNS</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<h3>
+
+Programming
+
+</h3>
+
+
+<ul>
+
+<li>Python</li>
+
+<li>Bash</li>
+
+<li>PHP</li>
+
+<li>Symfony</li>
+
+<li>SQL</li>
+
+<li>JavaScript</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+        EXPERIENCE
+========================= -->
+
+
+<section id="experience">
+
+
+<h2>
+
+Experience
+
+</h2>
+
+
+
+<div class="card">
+
+
+<h3>
+
+Cybersecurity Intern — Smartovate LTD
+
+</h3>
+
+
+<p>
+
+2026
+
+</p>
+
+
+<p>
+
+Developed a Cloud-Native SIEM solution using:
+
+</p>
+
+
+<ul>
+
+<li>Microsoft Sentinel</li>
+
+<li>Azure Monitor</li>
+
+<li>KQL Detection Rules</li>
+
+<li>SOAR Playbooks</li>
+
+<li>Logic Apps</li>
 
 
 </ul>
@@ -127,9 +606,189 @@ Wazuh SOC Home Lab
 <div class="card">
 
 
+<h3>
+
+IT Internship — Leoni Mateur Sud
+
+</h3>
+
+
+<p>
+
+2025
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+Software Development Internship — Coding Bettounsi
+
+</h3>
+
+
+<p>
+
+2024
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        PROJECTS
+========================= -->
+
+
+<section id="projects">
+
+
 <h2>
-Certifications
+
+Cybersecurity Projects
+
 </h2>
+
+
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+
+<h3>
+
+Azure Sentinel SIEM Lab
+
+</h3>
+
+
+<p>
+
+Cloud SOC environment implementing:
+
+</p>
+
+
+<ul>
+
+<li>Microsoft Sentinel</li>
+
+<li>KQL Rules</li>
+
+<li>Dashboards</li>
+
+<li>SOAR Automation</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+Purple Team Detection Lab
+
+</h3>
+
+
+<p>
+
+Splunk Enterprise + Sysmon + MITRE ATT&CK
+
+with Windows and Kali Linux environments.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+Wazuh SOC Home Lab
+
+</h3>
+
+
+<p>
+
+Monitoring environment using:
+
+Wazuh, Suricata, MISP, TheHive and Cortex.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+        CERTIFICATIONS
+========================= -->
+
+
+<section id="certifications">
+
+
+<h2>
+
+Certifications
+
+</h2>
+
+
+<div class="card">
 
 
 <ul>
@@ -140,12 +799,17 @@ Google Cybersecurity Certificate
 
 
 <li>
-CCNA
+Cisco CCNA
 </li>
 
 
 <li>
-AZ-900 Microsoft Azure Fundamentals
+Microsoft AZ-900 Azure Fundamentals
+</li>
+
+
+<li>
+TryHackMe SOC Level 1
 </li>
 
 
@@ -155,18 +819,33 @@ AZ-900 Microsoft Azure Fundamentals
 </div>
 
 
+</section>
 
 
+
+
+
+
+
+
+
+<!-- =========================
+        CONTACT
+========================= -->
+
+
+<section id="contact">
+
+
+<h2>
+
+Contact
+
+</h2>
 
 
 
 <div class="card">
-
-
-<h2>
-Contact
-</h2>
-
 
 
 <p>
@@ -175,11 +854,12 @@ GitHub:
 
 <a href="https://github.com/wassim078">
 
-My GitHub
+github.com/wassim078
 
 </a>
 
 </p>
+
 
 
 
@@ -187,9 +867,9 @@ My GitHub
 
 LinkedIn:
 
-<a href="https://tn.linkedin.com/in/wassim-jmili-517423248/">
+<a href="https://tn.linkedin.com/in/wassim-jmili-517423248">
 
-My LinkedIn
+linkedin.com/in/wassim-jmili-517423248
 
 </a>
 
@@ -198,27 +878,32 @@ My LinkedIn
 
 
 
-
 <h3>
+
 LinkedIn Profile Badge
+
 </h3>
 
 
 
-<!-- LinkedIn Badge -->
-
 <div class="badge-base LI-profile-badge"
-data-locale="ar_AE"
+
+data-locale="en_US"
+
 data-size="medium"
+
 data-theme="dark"
+
 data-type="VERTICAL"
+
 data-vanity="wassim-jmili-517423248"
+
 data-version="v1">
 
 
 <a class="badge-base__link LI-simple-link"
 
-href="https://tn.linkedin.com/in/wassim-jmili-517423248?trk=profile-badge">
+href="https://tn.linkedin.com/in/wassim-jmili-517423248">
 
 Wassim Jmili
 
@@ -229,11 +914,34 @@ Wassim Jmili
 
 
 
-
 </div>
 
 
+</section>
 
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 Wassim Jmili | Cybersecurity Portfolio
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+<script src="src/js/main.js"></script>
 
 
 </body>
