@@ -4,243 +4,97 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
   // Current year
   const year = document.getElementById("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+  if (year) year.textContent = new Date().getFullYear();
 
 
   // Mobile navigation
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
 
-  function closeMenu() {
+  function setMenu(open) {
     if (!menuToggle || !navLinks) return;
 
-    menuToggle.classList.remove("active");
-    navLinks.classList.remove("open");
-
-    menuToggle.setAttribute("aria-expanded", "false");
+    navLinks.classList.toggle("open", open);
+    menuToggle.classList.toggle("active", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
     menuToggle.setAttribute(
       "aria-label",
-      "Open navigation menu"
+      open ? "Close navigation menu" : "Open navigation menu"
     );
   }
 
   if (menuToggle && navLinks) {
-
     menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuToggle.classList.toggle("active", isOpen);
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen
-          ? "Close navigation menu"
-          : "Open navigation menu"
-      );
+      setMenu(!navLinks.classList.contains("open"));
     });
 
     navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", () => setMenu(false));
     });
 
     document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
+      if (event.key === "Escape") setMenu(false);
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) {
-        closeMenu();
-      }
+      if (window.innerWidth > 760) setMenu(false);
     });
   }
 
 
-  // Typing animation
-  const typingElement = document.getElementById("typingText");
+  // Detection console: play the log, then raise the alert
+  const logLines = document.querySelectorAll("#log .log-line");
+  const alertBox = document.getElementById("alert");
 
-  const phrases = [
-    "SOC & SIEM Engineering",
-    "Detection Engineering",
-    "Cloud Security",
-    "Blue Team Operations",
-    "DevSecOps"
-  ];
-
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if (typingElement) {
+  if (logLines.length && alertBox) {
 
     if (reducedMotion) {
-      typingElement.textContent = phrases[0];
+      logLines.forEach(line => line.classList.add("on"));
+      alertBox.classList.add("on");
 
     } else {
+      let delay = 500;
 
-      let phraseIndex = 0;
-      let characterIndex = 0;
-      let deleting = false;
+      logLines.forEach(line => {
+        setTimeout(() => line.classList.add("on"), delay);
+        delay += 380;
+      });
 
-      function typeText() {
-
-        const phrase = phrases[phraseIndex];
-
-        if (!deleting) {
-
-          characterIndex++;
-
-          typingElement.textContent =
-            phrase.substring(0, characterIndex);
-
-          if (characterIndex >= phrase.length) {
-            deleting = true;
-            setTimeout(typeText, 1600);
-            return;
-          }
-
-          setTimeout(typeText, 75);
-
-        } else {
-
-          characterIndex--;
-
-          typingElement.textContent =
-            phrase.substring(0, characterIndex);
-
-          if (characterIndex <= 0) {
-            deleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-
-            setTimeout(typeText, 350);
-            return;
-          }
-
-          setTimeout(typeText, 35);
-        }
-      }
-
-      typeText();
+      setTimeout(() => alertBox.classList.add("on"), delay + 350);
     }
   }
 
 
-  // Reveal elements on scroll
-  const revealElements = document.querySelectorAll("[data-reveal]");
-
-  if (
-    "IntersectionObserver" in window &&
-    !reducedMotion
-  ) {
-
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            observer.unobserve(entry.target);
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
-    );
-
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
-    });
-
-  } else {
-
-    revealElements.forEach(element => {
-      element.classList.add("revealed");
-    });
-
-  }
-
-
-  // Scroll progress
-  const progressBar = document.getElementById("scrollProgress");
-
-  function updateProgress() {
-
-    if (!progressBar) return;
-
-    const scrollTop = window.scrollY;
-
-    const scrollableHeight =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    const progress = scrollableHeight > 0
-      ? (scrollTop / scrollableHeight) * 100
-      : 0;
-
-    progressBar.style.width = `${progress}%`;
-  }
-
-  window.addEventListener("scroll", updateProgress, {
-    passive: true
-  });
-
-  updateProgress();
-
-
-  // Active navigation links
+  // Highlight the navigation link of the section in view
   const sections = document.querySelectorAll("main section[id]");
-  const navigationLinks = document.querySelectorAll(
-    '.nav-links a[href^="#"]'
-  );
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && sections.length) {
 
     const sectionObserver = new IntersectionObserver(
       entries => {
-
         entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
 
-          if (entry.isIntersecting) {
-
-            navigationLinks.forEach(link => {
-
-              const active =
-                link.getAttribute("href") ===
-                `#${entry.target.id}`;
-
-              link.classList.toggle("active", active);
-
-            });
-
-          }
-
+          navAnchors.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${entry.target.id}`
+            );
+          });
         });
-
       },
-      {
-        rootMargin: "-35% 0px -55% 0px"
-      }
+      { rootMargin: "-35% 0px -55% 0px" }
     );
 
-    sections.forEach(section => {
-      sectionObserver.observe(section);
-    });
+    sections.forEach(section => sectionObserver.observe(section));
   }
 
 });
