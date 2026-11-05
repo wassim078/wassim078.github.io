@@ -1,24 +1,18 @@
-/* =========================================
-   WASSIM JMILI — PORTFOLIO JAVASCRIPT
-========================================= */
+/* ==========================================
+   WASSIM JMILI — PORTFOLIO INTERACTIONS
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // =====================================
-  // CURRENT YEAR
-  // =====================================
+  // Current year
+  const year = document.getElementById("year");
 
-  const yearElement = document.getElementById("year");
-
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
 
-  // =====================================
-  // MOBILE NAVIGATION
-  // =====================================
-
+  // Mobile navigation
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
 
@@ -27,8 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggle.classList.remove("active");
     navLinks.classList.remove("open");
+
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    menuToggle.setAttribute(
+      "aria-label",
+      "Open navigation menu"
+    );
   }
 
   if (menuToggle && navLinks) {
@@ -37,10 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const isOpen = navLinks.classList.toggle("open");
 
       menuToggle.classList.toggle("active", isOpen);
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
       menuToggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
+        isOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
       );
     });
 
@@ -62,10 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // =====================================
-  // TYPING EFFECT
-  // =====================================
-
+  // Typing animation
   const typingElement = document.getElementById("typingText");
 
   const phrases = [
@@ -76,10 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "DevSecOps"
   ];
 
-  let phraseIndex = 0;
-  let characterIndex = 0;
-  let deleting = false;
-
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
@@ -88,55 +86,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (reducedMotion) {
       typingElement.textContent = phrases[0];
+
     } else {
 
-      function typePhrase() {
-        const currentPhrase = phrases[phraseIndex];
+      let phraseIndex = 0;
+      let characterIndex = 0;
+      let deleting = false;
+
+      function typeText() {
+
+        const phrase = phrases[phraseIndex];
 
         if (!deleting) {
+
           characterIndex++;
 
           typingElement.textContent =
-            currentPhrase.substring(0, characterIndex);
+            phrase.substring(0, characterIndex);
 
-          if (characterIndex === currentPhrase.length) {
+          if (characterIndex >= phrase.length) {
             deleting = true;
-            setTimeout(typePhrase, 1500);
+            setTimeout(typeText, 1600);
             return;
           }
 
-          setTimeout(typePhrase, 75);
+          setTimeout(typeText, 75);
 
         } else {
+
           characterIndex--;
 
           typingElement.textContent =
-            currentPhrase.substring(0, characterIndex);
+            phrase.substring(0, characterIndex);
 
-          if (characterIndex === 0) {
+          if (characterIndex <= 0) {
             deleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
 
-            setTimeout(typePhrase, 350);
+            setTimeout(typeText, 350);
             return;
           }
 
-          setTimeout(typePhrase, 35);
+          setTimeout(typeText, 35);
         }
       }
 
-      typePhrase();
+      typeText();
     }
   }
 
 
-  // =====================================
-  // SCROLL REVEAL ANIMATIONS
-  // =====================================
-
+  // Reveal elements on scroll
   const revealElements = document.querySelectorAll("[data-reveal]");
 
-  if ("IntersectionObserver" in window && !reducedMotion) {
+  if (
+    "IntersectionObserver" in window &&
+    !reducedMotion
+  ) {
 
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -170,41 +176,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // =====================================
-  // SCROLL PROGRESS BAR
-  // =====================================
-
+  // Scroll progress
   const progressBar = document.getElementById("scrollProgress");
 
-  function updateScrollProgress() {
+  function updateProgress() {
 
     if (!progressBar) return;
 
-    const scrollTop =
-      window.scrollY || document.documentElement.scrollTop;
+    const scrollTop = window.scrollY;
 
     const scrollableHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.scrollHeight -
+      window.innerHeight;
 
-    const progress =
-      scrollableHeight > 0
-        ? (scrollTop / scrollableHeight) * 100
-        : 0;
+    const progress = scrollableHeight > 0
+      ? (scrollTop / scrollableHeight) * 100
+      : 0;
 
     progressBar.style.width = `${progress}%`;
   }
 
-  window.addEventListener("scroll", updateScrollProgress, {
+  window.addEventListener("scroll", updateProgress, {
     passive: true
   });
 
-  updateScrollProgress();
+  updateProgress();
 
 
-  // =====================================
-  // ACTIVE NAVIGATION LINK
-  // =====================================
-
+  // Active navigation links
   const sections = document.querySelectorAll("main section[id]");
   const navigationLinks = document.querySelectorAll(
     '.nav-links a[href^="#"]'
@@ -219,14 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (entry.isIntersecting) {
 
-            const activeId = entry.target.id;
-
             navigationLinks.forEach(link => {
 
-              const isActive =
-                link.getAttribute("href") === `#${activeId}`;
+              const active =
+                link.getAttribute("href") ===
+                `#${entry.target.id}`;
 
-              link.classList.toggle("active", isActive);
+              link.classList.toggle("active", active);
 
             });
 
@@ -243,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => {
       sectionObserver.observe(section);
     });
-
   }
 
 });
