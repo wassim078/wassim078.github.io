@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Wassim Jmili | Cybersecurity Portfolio</title>
-  <meta name="description" content="Wassim Jmili — Cybersecurity Engineering student focused on SOC operations, SIEM, detection engineering, cloud security and DevSecOps.">
+  <title>Wassim Jmili | Cybersecurity Engineer</title>
+  <meta name="description" content="Wassim Jmili is a cybersecurity engineering student focused on SOC operations, SIEM, detection engineering, cloud security and DevSecOps.">
+  <meta name="theme-color" content="#0a0f1c">
 
-  <meta name="theme-color" content="#f4f3f0">
+  <script>document.documentElement.classList.add("js");</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="src/css/main.css">
   <link rel="stylesheet" href="src/css/animations.css">
@@ -21,24 +22,16 @@
 
 <body>
 
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
 
-      <a class="brand" href="#home" aria-label="Wassim Jmili home">
-        WJ<span>.</span>
+      <a class="brand" href="#home" aria-label="Wassim Jmili, home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Wassim Jmili
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
       </button>
@@ -49,149 +42,81 @@
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#contact" class="nav-contact">Let's talk <span>↗</span></a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </div>
 
     </nav>
   </header>
-
 
   <main>
 
     <!-- HERO -->
     <section class="hero container" id="home">
 
-      <div class="hero-content" data-reveal>
+      <div class="hero-copy">
 
-        <div class="availability">
-          <span class="availability-dot"></span>
-          OPEN TO FINAL-YEAR INTERNSHIP OPPORTUNITIES
-        </div>
+        <p class="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Looking for a final-year internship
+        </p>
 
-        <p class="eyebrow">CYBERSECURITY · BLUE TEAM · CLOUD SECURITY</p>
+        <h1 class="hero-title">Wassim<br>Jmili</h1>
 
-        <h1>
-          Wassim<br>
-          <span class="hero-name-accent">Jmili.</span>
-        </h1>
-
-        <h2 class="hero-role">
-          <span id="typingText">SOC &amp; SIEM Engineering</span>
-          <span class="typing-cursor">|</span>
-        </h2>
-
-        <p class="hero-description">
-          Cybersecurity Engineering student focused on building
-          security monitoring environments, engineering detections
-          and automating defensive security operations.
+        <p class="hero-role">
+          Cybersecurity engineer in training. I build SOC monitoring
+          labs, write detections and automate the response.
         </p>
 
         <div class="hero-actions">
-          <a href="#projects" class="button button-primary">
-            Explore my work <span>↗</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/wassim-jmili-517423248/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button button-secondary"
-          >
-            LinkedIn <span>↗</span>
+          <a href="#projects" class="button button-primary">View projects</a>
+          <a href="https://www.linkedin.com/in/wassim-jmili-517423248/"
+             target="_blank" rel="noopener noreferrer" class="button button-ghost">
+            LinkedIn
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <div class="hero-socials">
-          <a href="https://github.com/Wassim078"
-             target="_blank" rel="noopener noreferrer">
-            GitHub ↗
-          </a>
-
-          <a href="mailto:wassimjmili077@gmail.com">
-            Email ↗
-          </a>
-
+        <p class="hero-meta">
+          <a href="https://github.com/Wassim078" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:wassimjmili077@gmail.com">wassimjmili077@gmail.com</a>
           <span>Tunis, Tunisia</span>
-        </div>
+        </p>
 
       </div>
 
+      <!-- Illustrative detection console -->
+      <figure class="console" aria-label="Illustrative example of a password spray detection">
 
-      <!-- RIGHT VISUAL -->
-      <div class="hero-visual" data-reveal>
+        <figcaption class="console-bar">
+          <span class="console-title">Sentinel / sign-in logs</span>
+          <span class="console-note">Illustrative example</span>
+        </figcaption>
 
-        <div class="visual-orbit orbit-one"></div>
-        <div class="visual-orbit orbit-two"></div>
+        <ol class="log" id="log">
+          <li class="log-line"><time>08:41:02</time><span class="tag tag-ok">success</span><span class="log-text">j.smith from 198.51.100.7</span></li>
+          <li class="log-line"><time>08:41:09</time><span class="tag tag-fail">failure</span><span class="log-text">admin from 203.0.113.24</span></li>
+          <li class="log-line"><time>08:41:10</time><span class="tag tag-fail">failure</span><span class="log-text">finance01 from 203.0.113.24</span></li>
+          <li class="log-line"><time>08:41:12</time><span class="tag tag-fail">failure</span><span class="log-text">hr.lead from 203.0.113.24</span></li>
+          <li class="log-line"><time>08:41:13</time><span class="tag tag-fail">failure</span><span class="log-text">svc-backup from 203.0.113.24</span></li>
+          <li class="log-line"><time>08:41:15</time><span class="tag tag-fail">failure</span><span class="log-text">it.support from 203.0.113.24</span></li>
+        </ol>
 
-        <div class="visual-panel">
-
-          <div class="visual-topbar">
-            <div class="window-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <span>SECURITY / PROFILE</span>
-          </div>
-
-          <div class="visual-main">
-
-            <div class="visual-icon">⌘</div>
-
-            <p class="visual-label">FOCUS AREA</p>
-            <h3>Defensive<br>Security.</h3>
-
-            <div class="visual-divider"></div>
-
-            <div class="visual-stat">
-              <span>01</span>
-              <div>
-                <strong>SIEM Engineering</strong>
-                <small>Monitoring &amp; detection</small>
-              </div>
-            </div>
-
-            <div class="visual-stat">
-              <span>02</span>
-              <div>
-                <strong>Cloud Security</strong>
-                <small>Azure &amp; identity</small>
-              </div>
-            </div>
-
-            <div class="visual-stat">
-              <span>03</span>
-              <div>
-                <strong>Security Automation</strong>
-                <small>SOAR &amp; response workflows</small>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="visual-footer">
-            <span>WASSIM JMILI</span>
-            <span>PORTFOLIO 2026</span>
-          </div>
-
+        <div class="alert" id="alert">
+          <p class="alert-title">
+            <span class="alert-dot" aria-hidden="true"></span>
+            Rule triggered: password spray
+          </p>
+          <p class="alert-body">
+            One address failed against 9 accounts in 2 minutes.
+            Mapped to MITRE ATT&amp;CK T1110.003.
+          </p>
+          <ul class="alert-steps">
+            <li>Slack alert sent to the SOC channel</li>
+            <li>Sessions revoked through Microsoft Graph</li>
+          </ul>
         </div>
 
-        <div class="floating-tag tag-top">
-          <span class="tag-indicator"></span>
-          BLUE TEAM
-        </div>
-
-        <div class="floating-tag tag-bottom">
-          <span>⌁</span> SECURITY MINDED
-        </div>
-
-      </div>
-
-      <div class="hero-bottom">
-        <span>SCROLL TO EXPLORE</span>
-        <span class="scroll-line"></span>
-        <span>01 / 06</span>
-      </div>
+      </figure>
 
     </section>
 
@@ -199,68 +124,46 @@
     <!-- ABOUT -->
     <section class="section container" id="about">
 
-      <div class="section-heading" data-reveal>
-        <p class="eyebrow">01 — ABOUT</p>
-        <h2>Security is not just<br>about tools. It's about <span>thinking.</span></h2>
-      </div>
+      <div class="split">
 
-      <div class="about-layout">
+        <div class="section-head">
+          <h2 class="section-title">Security is about thinking, not just tools.</h2>
+        </div>
 
-        <div class="about-copy" data-reveal>
+        <div class="about-body">
           <p class="lead">
             I'm a final-year Computer Engineering student specializing
             in Cybersecurity at ESPRIT, Tunisia.
           </p>
 
           <p>
-            My interests are centered on Blue Team operations, SIEM
-            engineering, security monitoring, detection development
-            and cloud security.
+            My work centers on Blue Team operations: SIEM engineering,
+            security monitoring, detection development and cloud security.
+            Through internships and hands-on labs I've worked with
+            Microsoft Sentinel, Splunk, Azure, Sysmon, pfSense and
+            automation workflows.
           </p>
 
           <p>
-            Through internships and hands-on projects, I've worked
-            with Microsoft Sentinel, Splunk, Azure, Sysmon, pfSense
-            and security automation workflows.
-          </p>
-
-          <p>
-            I enjoy turning security data into meaningful detections,
-            building practical labs and improving how security events
+            I like turning raw security data into detections that mean
+            something, and building practical labs that show how events
             are monitored and handled.
           </p>
 
-          <a href="#experience" class="text-link">
-            Discover my experience <span>↗</span>
-          </a>
-        </div>
-
-        <div class="about-facts" data-reveal>
-
-          <div class="fact">
-            <span class="fact-number">01</span>
-            <div>
-              <h3>Security Monitoring</h3>
-              <p>Log analysis, correlation and SIEM detections.</p>
+          <dl class="focus">
+            <div class="focus-row">
+              <dt>Security monitoring</dt>
+              <dd>Log analysis, correlation and SIEM detections.</dd>
             </div>
-          </div>
-
-          <div class="fact">
-            <span class="fact-number">02</span>
-            <div>
-              <h3>Cloud &amp; Identity</h3>
-              <p>Azure, Microsoft Entra ID and cloud monitoring.</p>
+            <div class="focus-row">
+              <dt>Cloud and identity</dt>
+              <dd>Azure, Microsoft Entra ID and cloud monitoring.</dd>
             </div>
-          </div>
-
-          <div class="fact">
-            <span class="fact-number">03</span>
-            <div>
-              <h3>Automation</h3>
-              <p>SOAR workflows, integrations and response actions.</p>
+            <div class="focus-row">
+              <dt>Automation</dt>
+              <dd>SOAR workflows, integrations and response actions.</dd>
             </div>
-          </div>
-
+          </dl>
         </div>
 
       </div>
@@ -268,113 +171,89 @@
 
 
     <!-- EXPERTISE -->
-    <section class="section expertise-section" id="expertise">
-
+    <section class="section section-alt" id="expertise">
       <div class="container">
 
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">02 — EXPERTISE</p>
-          <h2>Technical <span>toolkit.</span></h2>
-          <p class="section-intro">
-            Technologies and concepts I've worked with through
-            practical labs, projects and professional experience.
-          </p>
+        <div class="split">
+
+          <div class="section-head">
+            <h2 class="section-title">Technical toolkit</h2>
+            <p class="section-intro">
+              Technologies I've used in labs, projects and internships.
+            </p>
+          </div>
+
+          <div class="toolkit">
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>SIEM and monitoring</h3>
+                <p>Centralized visibility and event analysis.</p>
+              </div>
+              <ul class="chips">
+                <li>Microsoft Sentinel</li><li>Splunk</li><li>Azure Monitor</li>
+                <li>Log Analytics</li><li>KQL</li><li>SPL</li><li>Sysmon</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>Detection engineering</h3>
+                <p>Rules, correlation and threat mapping.</p>
+              </div>
+              <ul class="chips">
+                <li>MITRE ATT&amp;CK</li><li>Detection rules</li><li>IOC analysis</li>
+                <li>Authentication logs</li><li>Alert analysis</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>SOAR and automation</h3>
+                <p>Automated workflows and response integrations.</p>
+              </div>
+              <ul class="chips">
+                <li>n8n</li><li>Azure Logic Apps</li><li>REST APIs</li>
+                <li>Microsoft Graph</li><li>Slack</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>Cloud and network security</h3>
+                <p>Identity, network controls and segmentation.</p>
+              </div>
+              <ul class="chips">
+                <li>Microsoft Azure</li><li>Entra ID</li><li>pfSense</li>
+                <li>Firewalls</li><li>DNS</li><li>TCP/IP</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>DevSecOps</h3>
+                <p>Security checks across CI/CD pipelines.</p>
+              </div>
+              <ul class="chips">
+                <li>GitLab CI/CD</li><li>Docker</li><li>Semgrep</li><li>Gitleaks</li>
+                <li>Trivy</li><li>Checkov</li><li>OWASP ZAP</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-row">
+              <div class="toolkit-name">
+                <h3>Systems and development</h3>
+                <p>Operating systems, scripting and applications.</p>
+              </div>
+              <ul class="chips">
+                <li>Linux</li><li>Windows</li><li>Python</li><li>Java</li>
+                <li>SQL</li><li>JavaScript</li><li>Spring Boot</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
-        <div class="expertise-grid">
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">01</span>
-            <div class="expertise-icon">⌕</div>
-            <h3>SIEM &amp; Monitoring</h3>
-            <p>Centralized security visibility and event analysis.</p>
-            <div class="tag-list">
-              <span>Microsoft Sentinel</span>
-              <span>Splunk</span>
-              <span>Azure Monitor</span>
-              <span>Log Analytics</span>
-              <span>KQL</span>
-              <span>SPL</span>
-              <span>Sysmon</span>
-            </div>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">02</span>
-            <div class="expertise-icon">⌘</div>
-            <h3>Detection Engineering</h3>
-            <p>Security rules, event correlation and threat mapping.</p>
-            <div class="tag-list">
-              <span>MITRE ATT&amp;CK</span>
-              <span>Detection Rules</span>
-              <span>IOC Analysis</span>
-              <span>Authentication Logs</span>
-              <span>Alert Analysis</span>
-            </div>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">03</span>
-            <div class="expertise-icon">↗</div>
-            <h3>SOAR &amp; Automation</h3>
-            <p>Automated workflows and security response integrations.</p>
-            <div class="tag-list">
-              <span>n8n</span>
-              <span>Azure Logic Apps</span>
-              <span>REST APIs</span>
-              <span>Microsoft Graph</span>
-              <span>Slack</span>
-            </div>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">04</span>
-            <div class="expertise-icon">◎</div>
-            <h3>Cloud &amp; Network Security</h3>
-            <p>Cloud identity, network controls and segmentation.</p>
-            <div class="tag-list">
-              <span>Microsoft Azure</span>
-              <span>Entra ID</span>
-              <span>pfSense</span>
-              <span>Firewalls</span>
-              <span>DNS</span>
-              <span>TCP/IP</span>
-            </div>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">05</span>
-            <div class="expertise-icon">⌬</div>
-            <h3>DevSecOps</h3>
-            <p>Integrating security checks throughout CI/CD pipelines.</p>
-            <div class="tag-list">
-              <span>GitLab CI/CD</span>
-              <span>Docker</span>
-              <span>Semgrep</span>
-              <span>Gitleaks</span>
-              <span>Trivy</span>
-              <span>Checkov</span>
-              <span>OWASP ZAP</span>
-            </div>
-          </article>
-
-          <article class="expertise-card" data-reveal>
-            <span class="card-number">06</span>
-            <div class="expertise-icon">⌨</div>
-            <h3>Systems &amp; Development</h3>
-            <p>Operating systems, scripting and application development.</p>
-            <div class="tag-list">
-              <span>Linux</span>
-              <span>Windows</span>
-              <span>Python</span>
-              <span>Java</span>
-              <span>SQL</span>
-              <span>JavaScript</span>
-              <span>Spring Boot</span>
-            </div>
-          </article>
-
-        </div>
       </div>
     </section>
 
@@ -382,277 +261,141 @@
     <!-- PROJECTS -->
     <section class="section container" id="projects">
 
-      <div class="section-heading" data-reveal>
-        <p class="eyebrow">03 — SELECTED WORK</p>
-        <h2>Projects built<br>with <span>purpose.</span></h2>
+      <div class="section-head section-head-wide">
+        <h2 class="section-title">Selected projects</h2>
         <p class="section-intro">
-          Practical cybersecurity environments, detection workflows
-          and security engineering projects.
+          Security environments, detection workflows and engineering work.
+          Open a project to read the code on GitHub.
         </p>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects">
 
-        <!-- SPLUNK PROJECT: CLICKABLE -->
-        <a
-          class="project-card project-featured"
-          href="https://github.com/wassim078/splunk-enterprise-soc-lab"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-reveal
-          aria-label="Open Splunk Enterprise SOC Lab on GitHub"
-        >
-          <div class="project-visual splunk-visual">
-            <div class="project-visual-top">
-              <span>01 / SOC LAB</span>
-              <span>↗ GITHUB</span>
-            </div>
-
-            <div class="mini-dashboard">
-              <div class="dashboard-title">SECURITY OPERATIONS</div>
-              <div class="dashboard-bars">
-                <span style="height:35%"></span>
-                <span style="height:55%"></span>
-                <span style="height:43%"></span>
-                <span style="height:78%"></span>
-                <span style="height:62%"></span>
-                <span style="height:90%"></span>
-                <span style="height:50%"></span>
-                <span style="height:70%"></span>
-                <span style="height:43%"></span>
-                <span style="height:82%"></span>
-                <span style="height:58%"></span>
-                <span style="height:95%"></span>
-              </div>
-              <div class="dashboard-bottom">
-                <span>DETECTION</span>
-                <span>MONITORING</span>
-                <span>AUTOMATION</span>
-              </div>
-            </div>
+        <a class="project"
+           href="https://github.com/wassim078/splunk-enterprise-soc-lab"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Splunk Enterprise SOC Lab, open on GitHub">
+          <div class="project-main">
+            <h3 class="project-title">Splunk Enterprise SOC Lab</h3>
+            <ul class="chips chips-quiet">
+              <li>Splunk</li><li>Sysmon</li><li>pfSense</li><li>n8n</li><li>MITRE ATT&amp;CK</li>
+            </ul>
           </div>
-
-          <div class="project-content">
-            <div class="project-meta">
-              <span>SIEM · SOC · AUTOMATION</span>
-              <span class="project-arrow">↗</span>
-            </div>
-
-            <h3>Splunk Enterprise SOC Lab</h3>
-
+          <div class="project-side">
             <p>
-              A practical SOC environment integrating Splunk Enterprise,
-              Sysmon, pfSense and security automation. Includes custom
-              detections and automated response workflows.
+              A practical SOC environment built on Splunk Enterprise, Sysmon,
+              pfSense and security automation, with custom detections and
+              automated response workflows.
             </p>
-
-            <div class="tag-list">
-              <span>Splunk</span>
-              <span>Sysmon</span>
-              <span>pfSense</span>
-              <span>n8n</span>
-              <span>MITRE ATT&amp;CK</span>
-            </div>
-
-            <div class="project-cta">
-              View source code on GitHub <span>↗</span>
-            </div>
+            <span class="project-link">
+              View on GitHub
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
           </div>
         </a>
 
-
-        <!-- AZURE PROJECT: CLICKABLE -->
-        <a
-          class="project-card"
-          href="https://github.com/wassim078/SIEM-Cloud-Native-with-Azure-Monitor-Sentiel"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-reveal
-          aria-label="Open Azure Sentinel SIEM project on GitHub"
-        >
-          <div class="project-visual azure-visual">
-            <div class="project-visual-top">
-              <span>02 / CLOUD SIEM</span>
-              <span>↗ GITHUB</span>
-            </div>
-
-            <div class="cloud-graphic">
-              <div class="cloud-circle">AZ</div>
-              <div class="cloud-line"></div>
-              <div class="cloud-nodes">
-                <span>SENTINEL</span>
-                <span>LOGS</span>
-                <span>SOAR</span>
-              </div>
-            </div>
+        <a class="project"
+           href="https://github.com/wassim078/SIEM-Cloud-Native-with-Azure-Monitor-Sentiel"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Azure Sentinel SIEM and SOAR, open on GitHub">
+          <div class="project-main">
+            <h3 class="project-title">Azure Sentinel SIEM and SOAR</h3>
+            <ul class="chips chips-quiet">
+              <li>Microsoft Sentinel</li><li>Azure</li><li>KQL</li><li>Logic Apps</li><li>Microsoft Graph</li>
+            </ul>
           </div>
-
-          <div class="project-content">
-            <div class="project-meta">
-              <span>CLOUD SECURITY · SIEM</span>
-              <span class="project-arrow">↗</span>
-            </div>
-
-            <h3>Azure Sentinel SIEM &amp; SOAR</h3>
-
+          <div class="project-side">
             <p>
-              Cloud-native security monitoring using Microsoft Sentinel,
-              Azure Monitor, KQL analytics rules, workbooks and automated
-              response playbooks.
+              Cloud-native monitoring with Microsoft Sentinel and Azure Monitor:
+              KQL analytics rules, workbooks and automated response playbooks.
             </p>
-
-            <div class="tag-list">
-              <span>Microsoft Sentinel</span>
-              <span>Azure</span>
-              <span>KQL</span>
-              <span>Logic Apps</span>
-              <span>Microsoft Graph</span>
-            </div>
-
-            <div class="project-cta">
-              View source code on GitHub <span>↗</span>
-            </div>
+            <span class="project-link">
+              View on GitHub
+              <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
           </div>
         </a>
 
-
-        <!-- SECURESHOP: PRIVATE PROJECT -->
-        <article class="project-card" data-reveal>
-
-          <div class="project-visual devsecops-visual">
-            <div class="project-visual-top">
-              <span>03 / DEVSECOPS</span>
-              <span>PRIVATE PROJECT</span>
-            </div>
-
-            <div class="pipeline">
-              <div>CODE</div>
-              <span>→</span>
-              <div>SCAN</div>
-              <span>→</span>
-              <div>DEPLOY</div>
-            </div>
-            <p class="pipeline-caption">SECURITY INTEGRATED INTO CI/CD</p>
+        <article class="project project-private">
+          <div class="project-main">
+            <h3 class="project-title">SecureShop DevSecOps Pipeline</h3>
+            <ul class="chips chips-quiet">
+              <li>GitLab CI/CD</li><li>Spring Boot</li><li>React</li><li>Semgrep</li><li>Trivy</li><li>OWASP ZAP</li>
+            </ul>
           </div>
-
-          <div class="project-content">
-            <div class="project-meta">
-              <span>APPLICATION SECURITY · CI/CD</span>
-              <span class="private-label">PRIVATE</span>
-            </div>
-
-            <h3>SecureShop DevSecOps Pipeline</h3>
-
+          <div class="project-side">
             <p>
-              A full-stack application protected by a GitLab CI/CD
-              security pipeline with static analysis, secret detection,
-              dependency scanning, container and IaC checks, and DAST.
+              A full-stack application protected by a GitLab CI/CD security
+              pipeline: static analysis, secret detection, dependency, container
+              and IaC scanning, and DAST.
             </p>
-
-            <div class="tag-list">
-              <span>GitLab CI/CD</span>
-              <span>Spring Boot</span>
-              <span>React</span>
-              <span>Semgrep</span>
-              <span>Trivy</span>
-              <span>OWASP ZAP</span>
-            </div>
-
-            <div class="project-cta private-cta">
-              Private academic project · Repository not public
-            </div>
+            <span class="project-link project-link-muted">Private academic project, no public repository</span>
           </div>
-
         </article>
 
       </div>
-
-      <p class="projects-note">
-        Public repositories open in a new tab. The SecureShop project
-        is currently private and is not linked to a public repository.
-      </p>
 
     </section>
 
 
     <!-- EXPERIENCE -->
-    <section class="section experience-section" id="experience">
-
+    <section class="section section-light" id="experience">
       <div class="container">
 
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">04 — EXPERIENCE</p>
-          <h2>Where I've<br>put skills <span>into practice.</span></h2>
-        </div>
+        <div class="split">
 
-        <div class="timeline">
+          <div class="section-head">
+            <h2 class="section-title">Experience</h2>
+          </div>
 
-          <article class="timeline-item" data-reveal>
-            <div class="timeline-date">JUN 2026 — AUG 2026</div>
-            <div class="timeline-marker"></div>
+          <div class="timeline">
 
-            <div class="timeline-content">
-              <p class="timeline-type">INTERNSHIP · CYBERSECURITY</p>
-              <h3>Cybersecurity Engineering Intern</h3>
-              <h4>Smartovate LTD</h4>
-
-              <p>
-                Worked on a cloud-native SIEM and SOAR environment
-                using Microsoft Sentinel, Azure Monitor and
-                Microsoft Entra ID.
-              </p>
-
-              <ul>
-                <li>Configured security data connectors and monitoring.</li>
-                <li>Developed KQL analytics rules for suspicious activity.</li>
-                <li>Created Sentinel workbooks and monitoring views.</li>
-                <li>Built Logic Apps playbooks integrated with Slack and Microsoft Graph.</li>
-              </ul>
-
-              <div class="tag-list">
-                <span>Microsoft Sentinel</span>
-                <span>KQL</span>
-                <span>Azure</span>
-                <span>Logic Apps</span>
+            <article class="job">
+              <p class="job-date">Jun 2026 to Aug 2026</p>
+              <div class="job-body">
+                <h3>Cybersecurity Engineering Intern</h3>
+                <p class="job-org">Smartovate LTD</p>
+                <p>
+                  Worked on a cloud-native SIEM and SOAR environment using
+                  Microsoft Sentinel, Azure Monitor and Microsoft Entra ID.
+                </p>
+                <ul class="job-list">
+                  <li>Configured security data connectors and monitoring.</li>
+                  <li>Developed KQL analytics rules for suspicious activity.</li>
+                  <li>Created Sentinel workbooks and monitoring views.</li>
+                  <li>Built Logic Apps playbooks integrated with Slack and Microsoft Graph.</li>
+                </ul>
+                <ul class="chips">
+                  <li>Microsoft Sentinel</li><li>KQL</li><li>Azure</li><li>Logic Apps</li>
+                </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
+            <article class="job">
+              <p class="job-date">2025</p>
+              <div class="job-body">
+                <h3>IT / Infrastructure Intern</h3>
+                <p class="job-org">Leoni, Mateur, Tunisia</p>
+                <p>
+                  Internship in an IT infrastructure environment, building
+                  practical knowledge of enterprise IT operations.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-item" data-reveal>
-            <div class="timeline-date">2025</div>
-            <div class="timeline-marker"></div>
+            <article class="job">
+              <p class="job-date">2024</p>
+              <div class="job-body">
+                <h3>Full-Stack Developer Intern</h3>
+                <p class="job-org">Coding Bettounsi, Tunis</p>
+                <p>
+                  Practical experience in web application development
+                  and software engineering.
+                </p>
+              </div>
+            </article>
 
-            <div class="timeline-content">
-              <p class="timeline-type">INTERNSHIP · IT INFRASTRUCTURE</p>
-              <h3>IT / Infrastructure Intern</h3>
-              <h4>Leoni · Mateur, Tunisia</h4>
-
-              <p>
-                Internship experience in an IT infrastructure
-                environment, developing practical knowledge of
-                enterprise IT operations.
-              </p>
-            </div>
-          </article>
-
-
-          <article class="timeline-item" data-reveal>
-            <div class="timeline-date">2024</div>
-            <div class="timeline-marker"></div>
-
-            <div class="timeline-content">
-              <p class="timeline-type">INTERNSHIP · SOFTWARE DEVELOPMENT</p>
-              <h3>Full-Stack Developer Intern</h3>
-              <h4>Coding Bettounsi · Tunis</h4>
-
-              <p>
-                Gained practical experience in web application
-                development and software engineering.
-              </p>
-            </div>
-          </article>
-
+          </div>
         </div>
 
       </div>
@@ -662,140 +405,87 @@
     <!-- EDUCATION -->
     <section class="section container" id="education">
 
-      <div class="section-heading" data-reveal>
-        <p class="eyebrow">05 — EDUCATION &amp; CERTIFICATIONS</p>
-        <h2>Learning is a<br><span>continuous process.</span></h2>
-      </div>
+      <div class="split">
 
-      <div class="education-grid">
-
-        <div class="education-column" data-reveal>
-          <h3 class="subsection-title">Education</h3>
-
-          <article class="education-card">
-            <span class="education-year">2024 — 2027</span>
-            <h4>Engineering Degree in Computer Science</h4>
-            <p>Cybersecurity Specialization</p>
-            <strong>ESPRIT · Tunisia</strong>
-            <small>Final year — expected graduation 2027</small>
-          </article>
-
-          <article class="education-card">
-            <span class="education-year">2021 — 2024</span>
-            <h4>Licence in Computer Science</h4>
-            <p>Software Engineering (GLSI)</p>
-            <strong>Faculty of Sciences of Bizerte</strong>
-          </article>
-
+        <div class="section-head">
+          <h2 class="section-title">Education and certifications</h2>
         </div>
 
+        <div class="edu-body">
 
-        <div class="certification-column" data-reveal>
-          <h3 class="subsection-title">Certifications &amp; Training</h3>
+          <div class="edu-block">
+            <h3 class="block-title">Education</h3>
 
-          <div class="certification-list">
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>Google Cybersecurity Professional Certificate</h4>
-                <p>Google · Coursera · 2026</p>
-              </div>
-            </div>
+            <article class="edu-item">
+              <p class="edu-years">2024 to 2027</p>
+              <h4>Engineering Degree in Computer Science</h4>
+              <p>Cybersecurity specialization, ESPRIT, Tunisia</p>
+              <p class="edu-note">Final year, graduating 2027</p>
+            </article>
 
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>TryHackMe SOC Level 1</h4>
-                <p>Security Operations training</p>
-              </div>
-            </div>
-
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>Cisco Networking Academy — Network Security</h4>
-                <p>70 hours · 2026</p>
-              </div>
-            </div>
-
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>CCNA — Switching, Routing and Wireless Essentials</h4>
-                <p>Cisco Networking Academy · 2025</p>
-              </div>
-            </div>
-
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>AWS Academy — Cloud Security Foundations</h4>
-                <p>AWS Academy</p>
-              </div>
-            </div>
-
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>Microsoft Azure Fundamentals — AZ-900 Training</h4>
-                <p>Azure Fundamentals Academy</p>
-              </div>
-            </div>
-
-            <div class="certification-item">
-              <span class="cert-icon">↗</span>
-              <div>
-                <h4>Network Technician Career Path</h4>
-                <p>Cisco Networking Academy · 2026</p>
-              </div>
-            </div>
-
+            <article class="edu-item">
+              <p class="edu-years">2021 to 2024</p>
+              <h4>Licence in Computer Science</h4>
+              <p>Software Engineering (GLSI), Faculty of Sciences of Bizerte</p>
+            </article>
           </div>
-        </div>
 
+          <div class="edu-block">
+            <h3 class="block-title">Certifications and training</h3>
+
+            <ul class="certs">
+              <li>
+                <h4>Google Cybersecurity Professional Certificate</h4>
+                <p>Google on Coursera, 2026</p>
+              </li>
+              <li>
+                <h4>TryHackMe SOC Level 1</h4>
+                <p>Security operations training</p>
+              </li>
+              <li>
+                <h4>Cisco Networking Academy: Network Security</h4>
+                <p>70 hours, 2026</p>
+              </li>
+              <li>
+                <h4>CCNA: Switching, Routing and Wireless Essentials</h4>
+                <p>Cisco Networking Academy, 2025</p>
+              </li>
+              <li>
+                <h4>AWS Academy: Cloud Security Foundations</h4>
+                <p>AWS Academy</p>
+              </li>
+              <li>
+                <h4>Microsoft Azure Fundamentals (AZ-900) training</h4>
+                <p>Azure Fundamentals Academy</p>
+              </li>
+              <li>
+                <h4>Network Technician Career Path</h4>
+                <p>Cisco Networking Academy, 2026</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </section>
 
 
     <!-- CONTACT -->
-    <section class="contact-section" id="contact">
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
 
-      <div class="container contact-inner" data-reveal>
+        <h2 class="contact-title">Let's build something secure.</h2>
 
-        <p class="eyebrow">06 — GET IN TOUCH</p>
-
-        <h2>
-          Let's build<br>
-          something <span>secure.</span>
-        </h2>
-
-        <p class="contact-description">
-          I'm interested in final-year cybersecurity internship
-          opportunities, particularly in SOC operations, SIEM,
-          detection engineering and cloud security.
+        <p class="contact-text">
+          I'm looking for a final-year cybersecurity internship in SOC
+          operations, SIEM, detection engineering or cloud security.
         </p>
 
-        <a
-          class="button button-light"
-          href="mailto:wassimjmili077@gmail.com"
-        >
-          Get in touch <span>↗</span>
-        </a>
+        <a class="contact-mail" href="mailto:wassimjmili077@gmail.com">wassimjmili077@gmail.com</a>
 
         <div class="contact-links">
-          <a href="mailto:wassimjmili077@gmail.com">Email</a>
-
-          <a
-            href="https://www.linkedin.com/in/wassim-jmili-517423248/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >LinkedIn ↗</a>
-
-          <a
-            href="https://github.com/Wassim078"
-            target="_blank"
-            rel="noopener noreferrer"
-          >GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/wassim-jmili-517423248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Wassim078" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
 
       </div>
@@ -803,13 +493,10 @@
 
   </main>
 
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="#home">WJ<span>.</span></a>
-      <p>Designed &amp; built by Wassim Jmili.</p>
-      <p>© <span id="year"></span> All rights reserved.</p>
+      <p>Designed and built by Wassim Jmili</p>
+      <p>&copy; <span id="year">2026</span></p>
     </div>
   </footer>
 
